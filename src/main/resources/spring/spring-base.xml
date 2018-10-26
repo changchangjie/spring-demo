@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans default-autowire="byName"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+
+
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config />
+    <!-- 使用annotation 自动注册bean,并检查@Required,@Autowired的属性已被注入 -->
+    <context:component-scan base-package="me.changjie" />
+
+
+    <bean id="beanA" class="me.changjie.bean.BeanA">
+        <property name="name" value="changjie"></property>
+        <property name="age" value="25"></property>
+        <property name="beanB" ref="beanB"/>
+    </bean>
+
+    <bean id="beanC" class="me.changjie.bean.BeanC"></bean>
+
+
+    <bean id="beanB" class="me.changjie.bean.BeanB"></bean>
+</beans>
