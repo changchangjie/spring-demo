@@ -16,9 +16,9 @@
 
 
     <bean id="beanA" class="me.changjie.bean.BeanA">
-        <property name="name" value="changjie"></property>
-        <property name="age" value="25"></property>
-        <property name="beanB" ref="beanB"/>
+        <!--<property name="name" value="changjie"></property>-->
+        <!--<property name="age" value="25"></property>-->
+        <!--<property name="beanB" ref="beanB"/>-->
     </bean>
 
     <bean id="beanC" class="me.changjie.bean.BeanC"></bean>
