@@ -32,12 +32,17 @@
     <bean id="beanB" class="me.changjie.bean.BeanB"></bean>
 
 
+
     <bean id="aop" class="me.changjie.bean.AOP"></bean>
     <aop:config>
         <aop:aspect ref="aop">
-            <aop:pointcut id="point" expression="execution(* me.changjie.bean.BeanA.test(..))"></aop:pointcut>
+            <!--*表示表示返回值的类型任意-->
+            <!--me.changjie.controller.ControllerA指定类名-->
+            <!--*(..)  *表示任意方法名，括号表示参数，两个点表示任意参数类型-->
+            <aop:pointcut id="point" expression="execution(* me.changjie.controller.ControllerA.*(..))"></aop:pointcut>
             <aop:before method="before" pointcut-ref="point"/>
             <aop:after method="after" pointcut-ref="point"/>
+            <!--<aop:around method="around" pointcut-ref="point"/>-->
         </aop:aspect>
     </aop:config>
 </beans>

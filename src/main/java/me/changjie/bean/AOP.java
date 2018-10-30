@@ -12,4 +12,8 @@ public class AOP {
     public void after(){
         System.out.println("aop after");
     }
+
+    public void around(){
+        System.out.println("aop around");
+    }
 }

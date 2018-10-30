@@ -28,11 +28,6 @@ public class BeanA implements InitializingBean {
     @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println("A Initializing");
-        test();
-    }
-
-    public void test(){
-        System.out.println("A test()");
     }
 
 }
