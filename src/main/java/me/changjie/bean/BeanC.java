@@ -8,6 +8,6 @@ import org.springframework.beans.factory.InitializingBean;
 public class BeanC implements InitializingBean {
     @Override
     public void afterPropertiesSet() throws Exception {
-        System.out.println("C被初始化了");
+        System.out.println("C Initializing");
     }
 }
