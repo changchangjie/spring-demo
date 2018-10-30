@@ -8,9 +8,14 @@
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 
 
-       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:mvc="http://www.springframework.org/schema/mvc">
 
-    <context:annotation-config />
+    <mvc:annotation-driven />
+    <!--<mvc:default-servlet-handler/>-->
+
+    <!--<context:annotation-config />-->
+
     <!-- 使用annotation 自动注册bean,并检查@Required,@Autowired的属性已被注入 -->
     <context:component-scan base-package="me.changjie" />
 
@@ -25,4 +30,14 @@
 
 
     <bean id="beanB" class="me.changjie.bean.BeanB"></bean>
+
+
+    <bean id="aop" class="me.changjie.bean.AOP"></bean>
+    <aop:config>
+        <aop:aspect ref="aop">
+            <aop:pointcut id="point" expression="execution(* me.changjie.bean.BeanA.test(..))"></aop:pointcut>
+            <aop:before method="before" pointcut-ref="point"/>
+            <aop:after method="after" pointcut-ref="point"/>
+        </aop:aspect>
+    </aop:config>
 </beans>
