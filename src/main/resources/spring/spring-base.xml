@@ -40,9 +40,13 @@
             <!--me.changjie.controller.ControllerA指定类名-->
             <!--*(..)  *表示任意方法名，括号表示参数，两个点表示任意参数类型-->
             <aop:pointcut id="point" expression="execution(* me.changjie.controller.ControllerA.*(..))"></aop:pointcut>
-            <aop:before method="before" pointcut-ref="point"/>
-            <aop:after method="after" pointcut-ref="point"/>
-            <!--<aop:around method="around" pointcut-ref="point"/>-->
+            <!--<aop:before method="before" pointcut-ref="point"/>-->
+            <!--<aop:after method="after" pointcut-ref="point"/>-->
+            <!--<aop:after-returning method="afterReturn" pointcut-ref="point"/>-->
+            <aop:around method="around" pointcut-ref="point"/>
         </aop:aspect>
     </aop:config>
+
+    <aop:aspectj-autoproxy/>
+    <bean id="aspectj" class="me.changjie.bean.AspectJ"/>
 </beans>

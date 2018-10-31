@@ -13,6 +13,10 @@ public class AOP {
         System.out.println("aop after");
     }
 
+    public void afterReturn(){
+        System.out.println("aop afterReturn");
+    }
+
     public void around(){
         System.out.println("aop around");
     }
