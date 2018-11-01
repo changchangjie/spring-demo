@@ -9,4 +9,8 @@ public class RealSubject implements Subject {
     public void hello() {
         System.out.println("hello");
     }
+
+    public void hello2(){
+        System.out.println("hello2");
+    }
 }
