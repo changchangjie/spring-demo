@@ -33,19 +33,19 @@
 
 
 
-    <bean id="aop" class="me.changjie.bean.AOP"></bean>
-    <aop:config>
-        <aop:aspect ref="aop">
-            <!--*表示表示返回值的类型任意-->
-            <!--me.changjie.controller.ControllerA指定类名-->
-            <!--*(..)  *表示任意方法名，括号表示参数，两个点表示任意参数类型-->
-            <aop:pointcut id="point" expression="execution(* me.changjie.controller.ControllerA.*(..))"></aop:pointcut>
+    <!--<bean id="aop" class="me.changjie.bean.AOP"></bean>-->
+    <!--<aop:config>-->
+        <!--<aop:aspect ref="aop">-->
+            <!--&lt;!&ndash;*表示表示返回值的类型任意&ndash;&gt;-->
+            <!--&lt;!&ndash;me.changjie.controller.ControllerA指定类名&ndash;&gt;-->
+            <!--&lt;!&ndash;*(..)  *表示任意方法名，括号表示参数，两个点表示任意参数类型&ndash;&gt;-->
+            <!--<aop:pointcut id="point" expression="execution(* me.changjie.controller.ControllerA.*(..))"></aop:pointcut>-->
             <!--<aop:before method="before" pointcut-ref="point"/>-->
-            <!--<aop:after method="after" pointcut-ref="point"/>-->
-            <!--<aop:after-returning method="afterReturn" pointcut-ref="point"/>-->
-            <aop:around method="around" pointcut-ref="point"/>
-        </aop:aspect>
-    </aop:config>
+            <!--&lt;!&ndash;<aop:after method="after" pointcut-ref="point"/>&ndash;&gt;-->
+            <!--&lt;!&ndash;<aop:after-returning method="afterReturn" pointcut-ref="point"/>&ndash;&gt;-->
+            <!--&lt;!&ndash;<aop:around method="around" pointcut-ref="point"/>&ndash;&gt;-->
+        <!--</aop:aspect>-->
+    <!--</aop:config>-->
 
     <aop:aspectj-autoproxy/>
     <bean id="aspectj" class="me.changjie.bean.AspectJ"/>
