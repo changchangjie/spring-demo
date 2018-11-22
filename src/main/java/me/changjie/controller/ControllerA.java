@@ -1,5 +1,7 @@
 package me.changjie.controller;
 
+import me.changjie.bean.RequestDomain;
+import me.changjie.bean.ResponseDomain;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
@@ -37,5 +39,13 @@ public class ControllerA implements BeanFactoryAware, ApplicationContextAware {
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
+    }
+
+    @RequestMapping(value = "jsonTest")
+    public ResponseDomain jsonTest(RequestDomain requestDomain){
+        System.out.println(requestDomain.getNewPassword());
+        ResponseDomain domain = new ResponseDomain();
+        domain.setNewName("changjie");
+        return domain;
     }
 }
