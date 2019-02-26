@@ -11,6 +11,8 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * Created by ChangJie on 2018/10/30.
  */
@@ -42,7 +44,10 @@ public class ControllerA implements BeanFactoryAware, ApplicationContextAware {
     }
 
     @RequestMapping(value = "jsonTest")
-    public ResponseDomain jsonTest(RequestDomain requestDomain){
+    public ResponseDomain jsonTest(RequestDomain requestDomain, HttpServletRequest request){
+
+        System.out.println("requesturi:"+request.getRequestURI());//requesturi:/jsonTest
+        System.out.println("requesturl:"+request.getRequestURL());//requesturl:http://localhost:8080/jsonTest
         System.out.println(requestDomain.getNewPassword());
         ResponseDomain domain = new ResponseDomain();
         domain.setNewName("changjie");
